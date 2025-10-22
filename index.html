@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>School Events Roadmap</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="site-header">
+    <div class="site-inner">
+      <h1>Events Timeline</h1>
+      <div class="controls">
+        <input id="search" type="search" placeholder="Search events or keywords…" />
+        <div class="filters">
+          <button data-filter="upcoming" class="active">Upcoming</button>
+          <button data-filter="past">Past</button>
+          <button data-filter="all">All</button>
+        </div>
+      </div>
+    </div>
+  </header>
+
+  <main class="container">
+    <div id="timeline" class="timeline" aria-live="polite"></div>
+    <div id="empty" class="empty" hidden>No events match your search.</div>
+  </main>
+
+  <template id="event-template">
+    <article class="timeline-item">
+      <time class="item-date"></time>
+      <div class="node" aria-hidden="true"></div>
+      <div class="card">
+        <h3 class="item-title"></h3>
+        <p class="item-meta"></p>
+        <p class="item-desc"></p>
+      </div>
+    </article>
+  </template>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
